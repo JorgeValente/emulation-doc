@@ -56,7 +56,7 @@ From Main Menu: Import Content icon, select Scan Directory -> Parent Directory o
 
 Plug in the controller and check OS detects it properly or install any drivers necessary.
 
-Most controllers are setup and mapped properly at this point and no further setup needed. 
+Most controllers are setup and mapped properly at this point and no further setup needed.
 
 __Note__: Else send comment to me with your problems.
 
@@ -89,11 +89,24 @@ Import Steam games to Launchbox: Go to Tools -> Import -> Steam Games
 Input user name as id: *url set here*
 API Key, either use existing or create a new one with a Domain.
 
-## AI Service Setup 
+## AI Service Setup
 
 TODO: registration & setup
-
 
 ## Updating RetroArch & Other Components
 
 TODO: Everything.
+
+## ROMVault
+
+TODO: Finish setup of RomVault
+
+A handy program to help organize all MAME roms.
+
+<http://www.romvault.com/>
+
+Install latest version of RomVault (latest 3.0.44) into a directory, example: D:\Games\Emulation Roms\RomVault
+
+Create 3 subdirectories: DatRoot, RomRoot, ToSort. Within DatRoot create: Arcade > Mame
+
+Add Dat files to: DatRoot > Arcade > Mame.
