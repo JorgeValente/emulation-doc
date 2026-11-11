@@ -1,112 +1,63 @@
 # emulation-doc
-Emulation - Retroarch Documentation
 
-After getting tired to learn and having to re-read a lot of documentation everytime a new install was needed, I decided to write the documentation myself. Will try to follow a no BS straight to the point instructions; will also try to keep this updated with current quirks & problems.
+Emulation and game library documentation.
 
-For example:
+After getting tired of learning and re-reading a lot of documentation every time a new install was needed, I decided to write the documentation myself. No BS, straight-to-the-point instructions, kept up to date with current quirks and problems.
 
-- Games: D:\Games\EmulationRoms\
-- RetroArch: D:\Games\RetroArch\
-- LaunchBox: D:\Games\LaunchBox\
+The rule for every choice here: **as few tools as possible**. One front end per device, one ROM and BIOS library shared by every device, and only add a tool when it clearly earns its place.
 
-# RetroArch
+## Which tool on which device
 
-Before start, define 3 directories (not under Program Files) for: Games, RetroArch & LaunchBox. Keep the games where they reside, do not Copy or Move into RetroArch, this is the most flexible installation (both programs can be reinstalled independently without affecting the other).
+| Device | Retro games | PC store games | Guide |
+| --- | --- | --- | --- |
+| Windows | LaunchBox (paid licence, decided: keep it) | LaunchBox too | [windows-launchbox.md](docs/windows-launchbox.md) |
+| Linux desktop | ES-DE + RetroArch | Steam, plus Heroic (GOG, Epic, Amazon) and Lutris (everything else) | [linux.md](docs/linux.md) |
+| Steam Deck or Steam Machine | RetroDECK (ES-DE with the emulators bundled) | Steam | [linux.md](docs/linux.md#steam-deck-or-steam-machine) |
+| Mac | ES-DE + RetroArch | Each store's own app (Steam, GOG and so on) | [mac.md](docs/mac.md) |
 
-__Note:__ The Subdirectory of LaunchBox will grow substantially if all images, videos & audio is downloaded from the Internet for each game.
+ES-DE is the same front end on Linux, Mac and (inside RetroDECK) the Steam Deck, so those three look and work the same and use the same folder names. Only Windows differs, because LaunchBox is already paid for and handles the PC stores too.
 
-## Installation
+## One shared library
 
-Download & Install latest Version (In this case: 1.8.2 Win Installer x64).
+Keep one master copy of ROMs and BIOS (for example on a NAS or a data drive) and point every device at it. Game files never live inside an app folder, so any app can be reinstalled without touching them.
 
-Double Click install file and Accept all Dialogs (Default Install to : C:\Users\XXX\AppData\Roaming\RetroArch\ ). Due to the use of LaunchBox (see below) we will install into another user Directory defined above.
+```
+Games/
+├── ROMs/          one folder per system, short names (below)
+│   ├── nes/
+│   ├── snes/
+│   ├── megadrive/
+│   ├── psx/
+│   └── ...
+└── BIOS/          master copy of every BIOS file you own
+```
 
-Run RetroArch to check installation was okay.
+System folders use the ES-DE / RetroDECK short names, because ES-DE only recognises its own names. LaunchBox accepts any folder name: you set the full Platform name once per folder at import.
 
-__Note:__ if RetroArch runs unstable with target ROM or ROM Core, try a different version; moving forward to Nigthies or backwards to older versions may work better.
+| Folder | LaunchBox Platform |
+| --- | --- |
+| nes | Nintendo Entertainment System |
+| snes | Super Nintendo Entertainment System |
+| n64 | Nintendo 64 |
+| gb / gbc / gba | Nintendo Game Boy / Game Boy Color / Game Boy Advance |
+| nds | Nintendo DS |
+| gc / wii | Nintendo GameCube / Nintendo Wii |
+| mastersystem / megadrive / segacd | Sega Master System / Sega Genesis / Sega CD |
+| saturn / dreamcast | Sega Saturn / Sega Dreamcast |
+| pcengine / pcenginecd | NEC TurboGrafx-16 / NEC TurboGrafx-CD |
+| psx / ps2 / psp | Sony Playstation / Sony Playstation 2 / Sony PSP |
+| arcade (or mame, fbneo) | Arcade |
 
-## Install Cores
+Rules for the ROM folders, on every device:
 
-Go to Load Core > Download a Core and Select the ones to install
+1. One system per folder, never two platforms mixed.
+2. Flat inside each system folder: no A–Z, region or genre subfolders. Multi-disc games keep their .cue/.bin or .chd files together with an .m3u playlist.
+3. No extra category level: `ROMs/Consoles/megadrive` breaks detection, `ROMs/megadrive` works.
+4. Cartridge ROMs stay zipped (.zip/.7z). Arcade sets stay zipped and must match the MAME or FinalBurn Neo version.
+5. Saves and emulator settings stay per device, because the emulators differ.
 
-For Reference, these seem to work best for their platform:
+Optional but recommended before the first import: [check your ROMs with a ROM manager](docs/rom-check.md).
 
-- Arcade: MAME
-- NEC PC Engine & TurboGrafx-CD: Beetle PCE (Mednafen)
-- Nintendo DS: Desume
-- Game Boy Advance: mGBA
-- Nintendo GameCube & Wii: Dolphin
-- NES: Nestopia
-- N64: Mupen64 (performance), ParaLLEl (accuracy)
-- SNES: Snes9X (Current)
-- Sega Dreamcast: Flycast
-- Sega Master System/Genesis/CD: Genesis Plus GX
-- *Maybe try this:* Sega MS/MD/CD/32X: PicoDrive; or also use Genesis Plus GX TODO: test this core
-- PS1: Beetle PSX HW
+## Decisions and open questions
 
-## Load Games
-
-Load Games into Collections, ie per console platform.
-
-__Note:__ May Skip step if using LaunchBox for all game launch.
-
-From Main Menu: Import Content icon, select Scan Directory -> Parent Directory or Directories of ROMs.
-
-## Controller Setup
-
-Plug in the controller and check OS detects it properly or install any drivers necessary.
-
-Most controllers are setup and mapped properly at this point and no further setup needed.
-
-__Note__: Else send comment to me with your problems.
-
-## Tweaks for Graphics & Sound
-
-First set the maximum / best graphics & sound preferences for your Computer Spec. I change "Global" Settings > Drivers > Video from  gl to vulkan.
-
-Current setup defaults to GL (OpenGL) which works with most Cores. For "newer" or "more advanced" Cores, Vulkan may be preferred. In other words, I prefer, if Vulkan works fine it can look better or give better performance; if it creates problems, default back to GL.
-
-For Core specific settings, Load the Core first. TODO.
-
-TODO : Graphics, Plugins and other tweaks & Shaders (For each Core or Game, override using...); Frames & Latency settings.
-
-## Launchbox extra frontend
-
-Download Launchbox from: <https://www.launchbox-app.com/download> (Must register email for download, Latest version 10.7).
-
-Install Launch Box into user directory (not Program Files) defaults to: C:\Users\XXX\LaunchBox .
-
-In Launchbox, Go to Tools > Manage Emulators > Add. In the 'Emulator Name' box, select Retroarch from the dropdown menu, then point the 'Emulator Application Path' box to the directory of Retroarch.exe.
-
-### Import Console Games
-
-Import games to Launchbox: Go to Tools -> Import -> Rom Files and follow the wizard.
-
-### Import Steam Games
-
-Import Steam games to Launchbox: Go to Tools -> Import -> Steam Games
-
-Input user name as id: *url set here*
-API Key, either use existing or create a new one with a Domain.
-
-## AI Service Setup
-
-TODO: registration & setup
-
-## Updating RetroArch & Other Components
-
-TODO: Everything.
-
-## ROMVault
-
-TODO: Finish setup of RomVault
-
-A handy program to help organize all MAME roms.
-
-<http://www.romvault.com/>
-
-Install latest version of RomVault (latest 3.0.44) into a directory, example: D:\Games\Emulation Roms\RomVault
-
-Create 3 subdirectories: DatRoot, RomRoot, ToSort. Within DatRoot create: Arcade > Mame
-
-Add Dat files to: DatRoot > Arcade > Mame.
+See [DECISIONS.md](DECISIONS.md) for what was decided, why, and what is still open.
