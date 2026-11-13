@@ -11,7 +11,7 @@ The rule for every choice here: **as few tools as possible**. One front end per 
 | Device | Retro games | PC store games | Guide |
 | --- | --- | --- | --- |
 | Windows | LaunchBox (paid licence, decided: keep it) | LaunchBox too | [windows-launchbox.md](docs/windows-launchbox.md) |
-| Linux desktop | ES-DE + RetroArch | Steam, plus Heroic (GOG, Epic, Amazon) and Lutris (everything else) | [linux.md](docs/linux.md) |
+| Linux desktop | ES-DE + RetroArch | Steam, plus Heroic for GOG and Epic | [linux.md](docs/linux.md) |
 | Steam Deck or Steam Machine | RetroDECK (ES-DE with the emulators bundled) | Steam | [linux.md](docs/linux.md#steam-deck-or-steam-machine) |
 | Mac | ES-DE + RetroArch | Each store's own app (Steam, GOG and so on) | [mac.md](docs/mac.md) |
 
@@ -56,7 +56,7 @@ Rules for the ROM folders, on every device:
 4. Cartridge ROMs stay zipped (.zip/.7z). Arcade sets stay zipped and must match the MAME or FinalBurn Neo version.
 5. Saves and emulator settings stay per device, because the emulators differ.
 
-Optional but recommended before the first import: [check your ROMs with a ROM manager](docs/rom-check.md).
+New ROMs never go straight into the library: they are checked first on one computer. See the [ROM workflow](docs/rom-workflow.md).
 
 ## Decisions and open questions
 

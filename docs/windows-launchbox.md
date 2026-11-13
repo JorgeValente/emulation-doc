@@ -7,9 +7,13 @@ Example layout (any drive works, just keep it out of Program Files):
 ```
 D:\Games\
 ├── ROMs\        one folder per system (see the README for names and rules)
+├── ToSort\      incoming ROMs, waiting for the RomVault check
 ├── BIOS\        master copy of every BIOS file you own
+├── RomVault\    the ROM manager (see the ROM workflow)
 └── LaunchBox\   the app itself, with RetroArch inside it
 ```
+
+This PC is also where new ROMs get checked before they reach `ROMs`: see the [ROM workflow](rom-workflow.md).
 
 Keep ROMs and BIOS outside the LaunchBox folder so a reinstall or rebuild never touches your game files. The LaunchBox folder grows a lot if you download all images, videos and audio for every game.
 
@@ -101,7 +105,7 @@ Use **Tools > Import > ROM Files > Multiple Platforms** to bring in every system
 5. Choose metadata and media (next section), review the list, then **Finish**. Media keeps downloading in the background.
 6. **Tools > Manage > Emulators**: confirm every new platform has a default emulator.
 
-Turn on **Tools > Options > Automated Imports** so new ROMs dropped into existing folders are picked up. **Tools > Scan** checks for added or removed games on demand.
+Turn on **Tools > Options > Automated Imports** so new ROMs that the [ROM workflow](rom-workflow.md) adds to existing folders are picked up. **Tools > Scan** checks for added or removed games on demand.
 
 ## Box art and metadata
 

@@ -1,6 +1,6 @@
-# Linux: ES-DE, Lutris and Heroic
+# Linux: ES-DE and Heroic
 
-On a Linux desktop, ES-DE is the front end for retro games, the same one used on the Mac and inside RetroDECK on the Steam Deck. PC store games go through Steam, Heroic Games Launcher (GOG, Epic, Amazon) and Lutris (everything else). LaunchBox has no Linux version yet; its developers expect one in 2027.
+On a Linux desktop, ES-DE is the front end for retro games, the same one used on the Mac and inside RetroDECK on the Steam Deck. PC store games go through Steam and Heroic Games Launcher (GOG and Epic). LaunchBox has no Linux version yet; its developers expect one in 2027.
 
 On a Steam Deck or Steam Machine use RetroDECK instead: see [the last section](#steam-deck-or-steam-machine).
 
@@ -39,7 +39,7 @@ As on Windows, BIOS files are never downloaded for you.
 
 There is no import step: ES-DE scans the ROM folder every time it starts, so copying files into the right system folder is the import.
 
-1. Copy each system's ROMs into its folder, for example `ROMs/snes`. Restart ES-DE; every system with games appears.
+1. New ROMs reach the `ROMs` folder through the [ROM workflow](rom-workflow.md). Restart ES-DE; every system with games appears.
 2. Create a free account at [screenscraper.fr](https://www.screenscraper.fr/). ES-DE's best box art and metadata come from it, and an account raises the download limits.
 3. In ES-DE, **Main Menu > Scraper**: choose ScreenScraper, enter the account, pick the media types and systems, then **Start**. For a big library this takes hours; re-run later with "only missing media".
 
@@ -48,8 +48,9 @@ There is no import step: ES-DE scans the ROM folder every time it starts, so cop
 Step 3 of the plan. The tools:
 
 - **Steam:** the native client, from your distro or Flathub.
-- **Heroic Games Launcher:** GOG, Epic and Amazon (`flatpak install flathub com.heroicgameslauncher.hgl`).
-- **Lutris:** Battle.net, EA, Ubisoft and anything else (`flatpak install flathub net.lutris.Lutris`).
+- **Heroic Games Launcher:** GOG and Epic (`flatpak install flathub com.heroicgameslauncher.hgl`).
+
+Lutris is left out: it is only needed for stores Heroic does not cover (Battle.net, EA, Ubisoft).
 
 ## Check, back up and rebuild
 
