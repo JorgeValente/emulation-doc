@@ -19,7 +19,12 @@ ES-DE is the same front end on Linux, Mac and (inside RetroDECK) the Steam Deck,
 
 ## One shared library
 
-Keep one master copy of ROMs and BIOS (for example on a NAS or a data drive) and point every device at it. Game files never live inside an app folder, so any app can be reinstalled without touching them.
+Keep one master copy of ROMs and BIOS and point every device at it:
+
+- **Several machines:** keep the master copy on a NAS or external drive and copy or sync it to each machine.
+- **One PC dual-booting Windows and Linux:** keep `Games` on a separate data partition formatted exFAT or NTFS so both OSes can read and write it.
+
+ Game files never live inside an app folder, so any app can be reinstalled without touching them.
 
 ```
 Games/

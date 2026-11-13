@@ -81,7 +81,7 @@ Use RetroDECK here rather than plain ES-DE. SteamOS has a read-only system files
 5. Scrape box art in ES-DE as above.
 6. To launch from Game Mode, add RetroDECK to Steam as a non-Steam game (**Games > Add a Non-Steam Game**).
 
-A Steam Machine also runs SteamOS, so the same steps apply. Back up the whole `retrodeck` folder; to rebuild, install RetroDECK and pick the same folder location on first run.
+To move the `retrodeck` folder later (for example to the SD card), use the RetroDECK Configurator rather than moving it by hand, so the Flatpak keeps access to it. A Steam Machine also runs SteamOS, so the same steps apply. Back up the whole `retrodeck` folder; to rebuild, install RetroDECK and pick the same folder location on first run.
 
 ## Sources
 
