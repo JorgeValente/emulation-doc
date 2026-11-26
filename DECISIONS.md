@@ -8,12 +8,15 @@ As few tools as possible. One front end per device, one shared ROM and BIOS libr
 
 | Date | Decision | Why |
 | --- | --- | --- |
+| 2026-11-27 | Mac stores: Heroic for GOG and Epic, Steam app for Steam (replaces "each store's own app") | One app instead of two for GOG and Epic, same as Linux |
+| 2026-11-27 | Guides assume Heroic 3.0 even while it is in beta | Not installed yet, and the new features are worth the risk |
+| 2026-11-27 | Steam stays on Linux and Mac even though Heroic 3.0 shows Steam games | Heroic needs the Steam client anyway, and in the beta some Steam games and anti-cheat games don't work |
 | 2026-11-13 | ROMs go through RomVault on one computer (Windows) before reaching the library; front ends only read the checked `ROMs` folder | One check, run seldom, instead of a ROM tool on every device |
 | 2026-11-13 | Linux stores: Steam + Heroic only, no Lutris | Stores used are GOG, Epic and Steam; Heroic covers GOG and Epic |
 | 2026-11-13 | The GitHub repo is the only copy of this documentation | No duplicates; the older Claude Docs versions are retired |
 | 2026-11-11 | Linux desktop: ES-DE for retro (replaces RetroDECK on the desktop) | Same front end as the Mac; RetroDECK is only needed where the OS is read-only |
 | 2026-11-09 | Windows: keep LaunchBox, also for PC stores | Paid licence, mature, no clearly better alternative |
-| 2026-11-09 | Mac: store apps directly for modern games, ES-DE for retro | Fewer Mac games, so a unified launcher adds little |
+| 2026-11-09 | Mac: store apps directly for modern games, ES-DE for retro (stores changed on 2026-11-27, see above) | Fewer Mac games, so a unified launcher adds little |
 | 2026-11-09 | Steam Deck / Steam Machine: RetroDECK | SteamOS's read-only system is replaced on updates; RetroDECK is a self-contained Flatpak that survives them |
 | 2026-10-14 | Regional versions merged into one entry by default (LaunchBox combine matching ROM titles) | Smaller, cleaner library |
 | 2026-10-13 | ROM folders use ES-DE / RetroDECK short names (snes, psx, megadrive) | One library for every device; LaunchBox maps names at import |
@@ -37,10 +40,11 @@ As few tools as possible. One front end per device, one shared ROM and BIOS libr
 - A RetroArch **Reinstall** from LaunchBox wipes its BIOS folder; **Update** does not.
 - Arcade ROM sets must match the MAME or FinalBurn Neo version of the emulator.
 - Saves and emulator settings are per device, not shared.
+- Heroic 3.0 is in beta (Beta 1 on 24 November 2026). Re-check the guides when 3.0 goes stable, including whether its Steam support is good enough by then.
 - LaunchBox has no Linux build yet; its developers expect one in 2027.
 
 ## Still open
 
 - Buy a Steam Deck or a Steam Machine? Only the software (RetroDECK) is decided.
-- PC stores (step 3): write the LaunchBox store imports and the Heroic setup (stores used: GOG, Epic, Steam).
+- PC stores (step 3): write the LaunchBox store imports and finish the Linux Heroic setup (stores used: GOG, Epic, Steam). The Mac Heroic setup is written.
 - RetroArch AI Service (translation) and per-core graphics overrides: still to write.

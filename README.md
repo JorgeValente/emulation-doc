@@ -11,11 +11,11 @@ The rule for every choice here: **as few tools as possible**. One front end per 
 | Device | Retro games | PC store games | Guide |
 | --- | --- | --- | --- |
 | Windows | LaunchBox (paid licence, decided: keep it) | LaunchBox too | [windows-launchbox.md](docs/windows-launchbox.md) |
-| Linux desktop | ES-DE + RetroArch | Steam, plus Heroic for GOG and Epic | [linux.md](docs/linux.md) |
+| Linux desktop | ES-DE + RetroArch | Steam, plus Heroic 3.0 for GOG and Epic | [linux.md](docs/linux.md) |
 | Steam Deck or Steam Machine | RetroDECK (ES-DE with the emulators bundled) | Steam | [linux.md](docs/linux.md#steam-deck-or-steam-machine) |
-| Mac | ES-DE + RetroArch | Each store's own app (Steam, GOG and so on) | [mac.md](docs/mac.md) |
+| Mac | ES-DE + RetroArch | Heroic for GOG and Epic, Steam app for Steam | [mac.md](docs/mac.md) |
 
-ES-DE is the same front end on Linux, Mac and (inside RetroDECK) the Steam Deck, so those three look and work the same and use the same folder names. Only Windows differs, because LaunchBox is already paid for and handles the PC stores too.
+ES-DE is the same front end on Linux, Mac and (inside RetroDECK) the Steam Deck, so those three look and work the same and use the same folder names. Heroic is the GOG and Epic app on both Linux and the Mac. Only Windows differs, because LaunchBox is already paid for and handles the PC stores too.
 
 ## One shared library
 

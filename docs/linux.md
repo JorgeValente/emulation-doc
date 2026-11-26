@@ -47,8 +47,19 @@ There is no import step: ES-DE scans the ROM folder every time it starts, so cop
 
 Step 3 of the plan. The tools:
 
-- **Steam:** the native client, from your distro or Flathub.
-- **Heroic Games Launcher:** GOG and Epic (`flatpak install flathub com.heroicgameslauncher.hgl`).
+- **Steam:** the native client, from your distro or Flathub. Play Steam games here.
+- **Heroic Games Launcher 3.0:** GOG and Epic.
+
+This guide assumes Heroic 3.0, which is still in beta (Beta 1, November 2026; the last stable version is 2.22.4). It comes from Flathub's beta repository:
+
+```
+flatpak remote-add --if-not-exists --user flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+flatpak install --user flathub-beta com.heroicgameslauncher.hgl
+```
+
+Bugs are expected in the beta, so make a backup with Heroic's Backup Wizard (logins, settings and game settings) before changing settings or updating.
+
+Heroic 3.0 can also show your Steam library, but Steam stays installed and remains the place to play Steam games: Heroic needs the Steam client anyway, and the beta notes say some Steam games won't start yet and anti-cheat games probably won't work. Heroic 3.0 also adds itch.io (Windows games only on Linux for now); it isn't a store used here.
 
 Lutris is left out: it is only needed for stores Heroic does not cover (Battle.net, EA, Ubisoft).
 
@@ -87,6 +98,7 @@ To move the `retrodeck` folder later (for example to the SD card), use the Retro
 
 - [ES-DE](https://es-de.org/) (official site: Windows, Linux, macOS)
 - [RetroDECK wiki](https://retrodeck.readthedocs.io/)
+- [Heroic 3.0.0 Beta 1 release notes](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/tag/v3.0.0-beta.1)
 - [LaunchBox should get a Linux version in 2027](https://gamingonlinux.com/2026/08/game-launcher-launchbox-should-get-a-linux-version-in-2027) (GamingOnLinux, August 2026)
 
 Flatpak ids, folder paths and menu names are from general knowledge of ES-DE, RetroArch and RetroDECK, not checked page by page; each project's own docs are the final word.
