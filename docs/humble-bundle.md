@@ -21,6 +21,7 @@ Downloads\
 1. Make a folder for it, here `C:\Users\jorgi\OneDrive\ClaudeOutputs\humble-cli`.
 2. From the [latest release](https://github.com/smbl64/humble-cli/releases/latest), download `humble-cli-windows-amd64.exe.zip`, unzip it into that folder and rename the file to `humble-cli.exe`.
 3. Put `Download Humble Bundle.bat` (below) in the same folder. Pin it to Start or make a desktop shortcut if you like.
+4. A short `README.txt` next to them repeats the everyday steps and the commands below.
 
 Use version 2.0 or later. Humble changed its login, and older versions can no longer sign in.
 
@@ -46,7 +47,9 @@ The cookie works like your password, so never share it. It is saved in `C:\Users
 
 ## Commands, if you ever need them
 
-Run these from the humble-cli folder:
+Open a command prompt in the humble-cli folder (click the Explorer address bar, type `cmd`, press Enter) and run:
+
+**Good to know:** `humble-cli list --claimed no` lists every bundle that still has unredeemed Steam (or other) keys.
 
 | Task | Command |
 | --- | --- |
