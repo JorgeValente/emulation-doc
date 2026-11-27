@@ -10,7 +10,7 @@ The rule for every choice here: **as few tools as possible**. One front end per 
 
 | Device | Retro games | PC store games | Guide |
 | --- | --- | --- | --- |
-| Windows | LaunchBox (paid licence, decided: keep it) | LaunchBox too | [windows-launchbox.md](docs/windows-launchbox.md) |
+| Windows | LaunchBox (paid licence, decided: keep it) | LaunchBox too; mods from Nexus Mods via Vortex | [windows-launchbox.md](docs/windows-launchbox.md) |
 | Linux desktop | ES-DE + RetroArch | Steam, plus Heroic 3.0 for GOG and Epic | [linux.md](docs/linux.md) |
 | Steam Deck or Steam Machine | RetroDECK (ES-DE with the emulators bundled) | Steam | [linux.md](docs/linux.md#steam-deck-or-steam-machine) |
 | Mac | ES-DE + RetroArch | Heroic for GOG and Epic, Steam app for Steam | [mac.md](docs/mac.md) |
