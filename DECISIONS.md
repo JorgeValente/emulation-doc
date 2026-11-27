@@ -8,6 +8,7 @@ As few tools as possible. One front end per device, one shared ROM and BIOS libr
 
 | Date | Decision | Why |
 | --- | --- | --- |
+| 2026-11-27 | Humble Bundle downloads: humble-cli plus a .bat launcher on the Windows PC, one folder per bundle in Downloads | One small maintained program, nothing else to install; skips files you already have and lists Steam keys |
 | 2026-11-27 | Mac stores: Heroic for GOG and Epic, Steam app for Steam (replaces "each store's own app") | One app instead of two for GOG and Epic, same as Linux |
 | 2026-11-27 | Guides assume Heroic 3.0 even while it is in beta | Not installed yet, and the new features are worth the risk |
 | 2026-11-27 | Steam stays on Linux and Mac even though Heroic 3.0 shows Steam games | Heroic needs the Steam client anyway, and in the beta some Steam games and anti-cheat games don't work |
@@ -32,6 +33,8 @@ As few tools as possible. One front end per device, one shared ROM and BIOS libr
 | Pegasus | Slow development, more setup work |
 | Playnite | Windows only, and LaunchBox is already paid for |
 | Lutris | Only needed for stores Heroic doesn't cover |
+| humblebundle-downloader (Python) | Needs Python installed, one more tool to keep |
+| Browser bookmarklets for Humble downloads | Unmaintained scripts that break when Humble changes its pages |
 | A playlists / library organisation section | Kept out to keep the guides simple |
 
 ## Things to remember

@@ -63,6 +63,10 @@ Rules for the ROM folders, on every device:
 
 New ROMs never go straight into the library: they are checked first on one computer. See the [ROM workflow](docs/rom-workflow.md).
 
+## Other guides
+
+- [Humble Bundle: download a whole bundle in one go](docs/humble-bundle.md) (Windows PC)
+
 ## Decisions and open questions
 
 See [DECISIONS.md](DECISIONS.md) for what was decided, why, and what is still open.
