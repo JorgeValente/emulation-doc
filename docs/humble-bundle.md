@@ -6,14 +6,13 @@ The tool is **[humble-cli](https://github.com/smbl64/humble-cli)**: free, open s
 
 ```
 Downloads\
-└── <bundle name>\      all files together, no subfolders
-    ├── book-one.epub
-    ├── book-one.pdf
+└── <bundle name>\
+    ├── <book or comic 1>\   one folder per item, e.g. book.epub, book.pdf
+    ├── <book or comic 2>\
     └── ...
 ```
 
-- humble-cli puts each item in its own subfolder, so the launcher downloads into a temporary `Downloads\_humble-cli-temp` folder and then moves every file into the flat bundle folder. If two items have a file with the same name, the second one gets the item name added in brackets.
-- If a download stops halfway, the temporary folder is kept, and running the same bundle again continues where it stopped. Running a finished bundle again downloads it again but keeps no duplicates.
+- Files you already have are skipped, and half-finished downloads continue where they stopped. Running the same bundle again is safe and only fetches what is missing.
 - Steam keys are not downloaded. The launcher lists them and shows whether each one is redeemed; you redeem them at [humblebundle.com/home/keys](https://www.humblebundle.com/home/keys).
 - Downloads go to the Windows Downloads folder, even if it was moved to another drive.
 
@@ -69,7 +68,7 @@ setlocal
 title Download Humble Bundle
 rem Downloads every file of a Humble Bundle into Downloads\<bundle name>.
 rem Needs humble-cli.exe in the same folder as this file.
-rem All files of a bundle end up in one flat folder (no per-item subfolders).
+rem Files already downloaded are skipped; half-finished ones are resumed.
 
 set "HC=%~dp0humble-cli.exe"
 if exist "%HC%" goto finddl
@@ -123,11 +122,7 @@ if errorlevel 1 goto failed
 echo.
 set "FMT="
 set /p "FMT=Formats to download, e.g. epub pdf (just Enter = everything): "
-rem humble-cli makes a subfolder per item, so download into a temp folder first
-rem and then move the files into one flat folder per bundle.
-set "STG=%DL%\_humble-cli-temp"
-if not exist "%STG%" mkdir "%STG%"
-pushd "%STG%"
+pushd "%DL%"
 if defined FMT goto withfmt
 "%HC%" download "%KEY%"
 goto afterdl
@@ -137,10 +132,7 @@ set "FMT=%FMT: =,%"
 :afterdl
 set "RC=%errorlevel%"
 popd
-rem On failure the temp folder is kept, so the next try resumes where it stopped.
 if not "%RC%"=="0" goto failed
-echo Moving the files into one folder per bundle...
-powershell -NoProfile -Command "$s=$env:STG; $d=$env:DL; Get-ChildItem -LiteralPath $s -Directory | ForEach-Object { $t=Join-Path $d $_.Name; New-Item -ItemType Directory -Force -Path $t | Out-Null; Get-ChildItem -LiteralPath $_.FullName -File -Recurse | ForEach-Object { $dest=Join-Path $t $_.Name; if (Test-Path -LiteralPath $dest) { if ((Get-Item -LiteralPath $dest).Length -eq $_.Length) { Remove-Item -LiteralPath $_.FullName; return }; $dest=Join-Path $t ($_.BaseName + ' (' + $_.Directory.Name + ')' + $_.Extension) }; Move-Item -LiteralPath $_.FullName -Destination $dest -Force } }; Remove-Item -LiteralPath $s -Recurse -Force"
 echo.
 echo Done. The bundle is in its own folder inside %DL%
 start "" "%DL%"
