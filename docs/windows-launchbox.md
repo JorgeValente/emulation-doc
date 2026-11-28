@@ -31,26 +31,15 @@ LaunchBox 13.15 and later ships with emulator plugins that download and configur
 2. Start LaunchBox and cancel the first-run import wizard. You import after the emulators are ready.
 3. Open **Tools > Manage > Plugins** and check the RetroArch plugin is enabled. Dolphin, PCSX2, MAME and ScummVM plugins ship with it too.
 4. Open **Tools > Manage > Emulators**, choose **Add**, pick **RetroArch** and let it download. RetroArch lands in `LaunchBox\Emulators\RetroArch`, its cores in `...\RetroArch\cores`.
-5. In the RetroArch profile, open **Associated Platforms** and check each platform has a core selected (suggestions below).
-6. Where a standalone emulator is better (PCSX2, Dolphin), add it the same way through its plugin and tick **Default Emulator** on that platform.
+5. In the RetroArch profile, open **Associated Platforms** and check each platform has a core selected (LaunchBox fills these in; keep its choice unless a game misbehaves).
+6. For the systems in the table below, add the standalone emulator the same way through its plugin and tick **Default Emulator** on that platform.
 
-| System | Suggested emulator / core | Alternative | Notes |
-| --- | --- | --- | --- |
-| NES | RetroArch: Mesen | Nestopia | |
-| SNES | RetroArch: Snes9x | | |
-| Nintendo 64 | RetroArch: Mupen64Plus-Next | ParaLLEl N64 (accuracy) | |
-| Game Boy / Color | RetroArch: Gambatte | | |
-| Game Boy Advance | RetroArch: mGBA | | |
-| Nintendo DS | RetroArch: melonDS DS | DeSmuME | |
-| PC Engine / TurboGrafx-CD | RetroArch: Beetle PCE | | CD needs BIOS |
-| Sega Master System / Genesis / CD | RetroArch: Genesis Plus GX | PicoDrive (also 32X) | Sega CD needs BIOS |
-| Sega Saturn | RetroArch: Beetle Saturn | | needs BIOS |
-| Sega Dreamcast | RetroArch: Flycast | | BIOS optional |
-| PlayStation | RetroArch: SwanStation or Beetle PSX HW | | needs BIOS |
-| PlayStation 2 | PCSX2 (plugin) | | needs BIOS |
-| PSP | RetroArch: PPSSPP | | no BIOS |
-| GameCube / Wii | Dolphin (plugin) | RetroArch Dolphin core | no BIOS |
-| Arcade | RetroArch: FinalBurn Neo, or MAME (plugin) | | set must match emulator version |
+Every other system runs on RetroArch with the core LaunchBox picks. Only these use a standalone emulator instead:
+
+| System | Emulator | Notes |
+| --- | --- | --- |
+| PlayStation 2 | PCSX2 (plugin) | needs BIOS |
+| GameCube / Wii | Dolphin (plugin) | no BIOS |
 
 ### Updating
 
@@ -215,4 +204,4 @@ Launch the game from LaunchBox as normal.
 - [Vortex](https://www.nexusmods.com/about/vortex) and [Why We're Focusing on Vortex Going Forward](https://www.nexusmods.com/masseffect/news/15424) (Nexus Mods)
 - [ROM Import & Management Guide, RetroFrogg Method v2](https://forums.launchbox-app.com/topic/87876-rom-import-management-guide-retrofrogg-method-v2-updated-simpler-method/) (LaunchBox forums, October 2024)
 
-BIOS file names and core suggestions are from general libretro knowledge; RetroArch's Core Information screen is the final word for each core.
+BIOS file names are from general libretro knowledge; RetroArch's Core Information screen is the final word for each core.
