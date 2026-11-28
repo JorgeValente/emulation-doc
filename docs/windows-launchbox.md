@@ -1,6 +1,6 @@
 # Windows: LaunchBox
 
-LaunchBox is the one front end on Windows for the whole library: retro systems through RetroArch, and the PC storefronts (Steam, Epic, GOG and so on). You bring the ROM, BIOS and special files; LaunchBox downloads the emulators, box art and metadata.
+LaunchBox is the one front end on Windows for the whole library: retro systems through RetroArch, and the PC storefronts (Steam, Epic, GOG and so on). Mods for PC games come from Nexus Mods through Vortex (see [Modding PC games](#modding-pc-games)). You bring the ROM, BIOS and special files; LaunchBox downloads the emulators, box art and metadata.
 
 Example layout (any drive works, just keep it out of Program Files):
 
@@ -31,26 +31,15 @@ LaunchBox 13.15 and later ships with emulator plugins that download and configur
 2. Start LaunchBox and cancel the first-run import wizard. You import after the emulators are ready.
 3. Open **Tools > Manage > Plugins** and check the RetroArch plugin is enabled. Dolphin, PCSX2, MAME and ScummVM plugins ship with it too.
 4. Open **Tools > Manage > Emulators**, choose **Add**, pick **RetroArch** and let it download. RetroArch lands in `LaunchBox\Emulators\RetroArch`, its cores in `...\RetroArch\cores`.
-5. In the RetroArch profile, open **Associated Platforms** and check each platform has a core selected (suggestions below).
-6. Where a standalone emulator is better (PCSX2, Dolphin), add it the same way through its plugin and tick **Default Emulator** on that platform.
+5. In the RetroArch profile, open **Associated Platforms** and check each platform has a core selected (LaunchBox fills these in; keep its choice unless a game misbehaves).
+6. For the systems in the table below, add the standalone emulator the same way through its plugin and tick **Default Emulator** on that platform.
 
-| System | Suggested emulator / core | Alternative | Notes |
-| --- | --- | --- | --- |
-| NES | RetroArch: Mesen | Nestopia | |
-| SNES | RetroArch: Snes9x | | |
-| Nintendo 64 | RetroArch: Mupen64Plus-Next | ParaLLEl N64 (accuracy) | |
-| Game Boy / Color | RetroArch: Gambatte | | |
-| Game Boy Advance | RetroArch: mGBA | | |
-| Nintendo DS | RetroArch: melonDS DS | DeSmuME | |
-| PC Engine / TurboGrafx-CD | RetroArch: Beetle PCE | | CD needs BIOS |
-| Sega Master System / Genesis / CD | RetroArch: Genesis Plus GX | PicoDrive (also 32X) | Sega CD needs BIOS |
-| Sega Saturn | RetroArch: Beetle Saturn | | needs BIOS |
-| Sega Dreamcast | RetroArch: Flycast | | BIOS optional |
-| PlayStation | RetroArch: SwanStation or Beetle PSX HW | | needs BIOS |
-| PlayStation 2 | PCSX2 (plugin) | | needs BIOS |
-| PSP | RetroArch: PPSSPP | | no BIOS |
-| GameCube / Wii | Dolphin (plugin) | RetroArch Dolphin core | no BIOS |
-| Arcade | RetroArch: FinalBurn Neo, or MAME (plugin) | | set must match emulator version |
+Every other system runs on RetroArch with the core LaunchBox picks. Only these use a standalone emulator instead:
+
+| System | Emulator | Notes |
+| --- | --- | --- |
+| PlayStation 2 | PCSX2 (plugin) | needs BIOS |
+| GameCube / Wii | Dolphin (plugin) | no BIOS |
 
 ### Updating
 
@@ -166,6 +155,39 @@ Step 3 of the plan. From the old notes, Steam import works like this:
 
 Epic, GOG and the others are still to be written.
 
+## Modding PC games
+
+Mods come from [Nexus Mods](https://www.nexusmods.com) and are installed with **Vortex**, Nexus Mods' own free mod manager. Vortex finds games from Steam, GOG and Epic by itself and keeps every mod outside the game folder, so a mod can be switched off or removed without reinstalling the game. LaunchBox keeps launching the game as usual; Vortex only changes the game's files.
+
+Nexus Mods has said Vortex is the app it is focusing on (its newer Nexus Mods app is no longer the plan), so Vortex is the safe choice.
+
+### Install
+
+1. Make a free account at <https://www.nexusmods.com>. Premium is optional: it gives fast downloads and one-click installs of whole collections; without it you click **Slow download** for each file.
+2. Download Vortex from <https://www.nexusmods.com/about/vortex> and install it.
+3. Start Vortex, log in with your Nexus account, and let it handle Nexus links when asked (this makes the **Mod Manager Download** buttons on the website open in Vortex).
+
+### Set up a game
+
+1. Open **Games**, find the game under **Discovered** and click **Manage**. If it is not found, use **Manually Set Location** and pick the game's install folder.
+2. Accept the staging folder Vortex suggests. It must be on the **same drive** as the game, because Vortex links files instead of copying them.
+3. If Vortex asks for extra tools for that game (for example a script extender), follow its prompt.
+
+### Add mods
+
+1. On the mod's Nexus page, click **Mod Manager Download**. The file appears in Vortex's **Mods** tab.
+2. Click **Install**, then **Enable**. Vortex deploys the mod into the game.
+3. If Vortex shows a conflict between two mods, choose which one wins in the **Mods** tab; for Bethesda games it also sorts the plugin load order for you.
+4. **Collections** (ready-made mod lists) install the same way from the **Collections** tab, one click with Premium.
+
+Launch the game from LaunchBox as normal.
+
+### Keep it working
+
+- When a game updates, mods can break. Check the mod pages for updates (Vortex shows them in the **Mods** tab) before playing.
+- Before uninstalling or verifying a game in its store, use **Purge Mods** in Vortex so the game folder is clean again.
+- Back up the staging folder (your downloaded and installed mods) and `%AppData%\Vortex` (settings and profiles) with the rest of `D:\Games`.
+
 ## Still to do
 
 - RetroArch AI Service (on-screen translation): registration and setup.
@@ -179,6 +201,7 @@ Epic, GOG and the others are still to be written.
 - [Setting Up an Emulator Manually](https://feedback.launchbox-app.com/help/articles/3038328-setting-up-an-emulator-manually) (LaunchBox Help Center)
 - [LaunchBox Plugin Manager FAQ](https://forums.launchbox-app.com/topic/83544-faq-launchbox-plugin-manager-everything-you-need-to-know/) (LaunchBox forums)
 - [Easily import tens of platforms](https://forums.launchbox-app.com/topic/86710-easily-import-tens-of-platforms/) (LaunchBox forums)
+- [Vortex](https://www.nexusmods.com/about/vortex) and [Why We're Focusing on Vortex Going Forward](https://www.nexusmods.com/masseffect/news/15424) (Nexus Mods)
 - [ROM Import & Management Guide, RetroFrogg Method v2](https://forums.launchbox-app.com/topic/87876-rom-import-management-guide-retrofrogg-method-v2-updated-simpler-method/) (LaunchBox forums, October 2024)
 
-BIOS file names and core suggestions are from general libretro knowledge; RetroArch's Core Information screen is the final word for each core.
+BIOS file names are from general libretro knowledge; RetroArch's Core Information screen is the final word for each core.

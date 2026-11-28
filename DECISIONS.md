@@ -8,6 +8,7 @@ As few tools as possible. One front end per device, one shared ROM and BIOS libr
 
 | Date | Decision | Why |
 | --- | --- | --- |
+| 2026-11-27 | Windows modding: Nexus Mods for mods, Vortex to install them | One free app from the biggest mod site; finds Steam, GOG and Epic games itself and keeps mods out of the game folders |
 | 2026-11-27 | Humble Bundle downloads: humble-cli plus a .bat launcher on the Windows PC, one folder per bundle in Downloads | One small maintained program, nothing else to install; skips files you already have and lists Steam keys |
 | 2026-11-27 | Mac stores: Heroic for GOG and Epic, Steam app for Steam (replaces "each store's own app") | One app instead of two for GOG and Epic, same as Linux |
 | 2026-11-27 | Guides assume Heroic 3.0 even while it is in beta | Not installed yet, and the new features are worth the risk |
@@ -35,6 +36,7 @@ As few tools as possible. One front end per device, one shared ROM and BIOS libr
 | Lutris | Only needed for stores Heroic doesn't cover |
 | humblebundle-downloader (Python) | Needs Python installed, one more tool to keep |
 | Browser bookmarklets for Humble downloads | Unmaintained scripts that break when Humble changes its pages |
+| Nexus Mods app (the newer manager) | Nexus Mods put its focus back on Vortex |
 | A playlists / library organisation section | Kept out to keep the guides simple |
 
 ## Things to remember
